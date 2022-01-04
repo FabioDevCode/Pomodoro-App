@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/pomodori.png">
+    <script src="https://kit.fontawesome.com/347b4bbeba.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+
+    <title>Pomodoro App</title>
+</head>
+<body>
+    <h1>Pomodoro</h1>
+
+    <div class="group-btn">
+        <div class="back-btn anim1"></div>
+        <button class="btn1 active">Personnel</button>
+        <button class="btn2">Court</button>
+        <button class="btn3">Long</button>     
+    </div>
+
+    <div class="horloge">
+       
+        <audio src="./assets/Bell.mp3"></audio>
+
+        <div class="time">
+            <div class="mins">00</div>
+            <div class="point">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="secs">00</div>
+        </div>
+
+    </div>
+
+    <div class="setting">
+        <i class="fas fa-cog"></i>
+    </div>
+
+</body>
+</html>
