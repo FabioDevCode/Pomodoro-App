@@ -8,11 +8,10 @@
 
 html {
     --font-fam: 'Teko', sans-serif;
-    --color-lgt: rgba(255, 255, 255, .3);
+    --color-lgt: rgba(255, 255, 255, .6);
 }
 
 body {
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,6 +149,34 @@ h1 {
     box-shadow: 0 0 15px 5px rgba(29, 40, 53, .3);
 }
 
+#play_pause {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222F3E;
+    height: 50px;
+    width: 100px;
+    border-radius: 50px;
+    z-index: 1;
+    border: none;
+    bottom: 85px;
+}
+
+#play_pause:active {
+    transform: scale(.95);
+}
+
+#play_pause svg {
+    height: 50%;
+    fill: whitesmoke;
+}
+
+
+
+
+
 @media screen and (max-width: 365px) {
 
     .time {
@@ -158,4 +185,4 @@ h1 {
         height: 260px;
     }
 
-} 
+}
