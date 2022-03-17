@@ -31,3 +31,38 @@ btn3.addEventListener('click', function() {
     btnBg.classList.remove("anim2");
     btnBg.classList.add("anim3");
 })
+
+// Countdown Process
+let pomodoro = 60;
+let short = 5;
+let long = 15;
+let min = 0;
+
+function convertTime(minutes) {
+    let timeConverted = minutes * 60;
+    return timeConverted
+};
+
+let progressBar = document.querySelector(".progress-bar");
+
+let speed = 100;
+let actual = pomodoro;
+let degRadiant = (actual / 360);
+
+
+
+let countCircle = setInterval(()=> {
+    actual--;
+
+    progressBar.style.background = `conic-gradient(
+        #ff6347 ${actual / degRadiant}deg,
+        #212c3b ${actual / degRadiant}deg
+    )`;
+    if(actual == min) {
+        clearInterval(actual)
+    }
+}, 1000);
+
+
+
+

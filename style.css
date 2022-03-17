@@ -95,11 +95,20 @@ h1 {
                 -20px -20px 60px #273647;
 }
 
+.progress-bar {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+}
+
 .time {
     font-family: var(--font-fam);
     font-size: 4.5em;
     font-weight: 500;
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,10 +164,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #222F3E;
-    height: 50px;
-    width: 100px;
-    border-radius: 50px;
+    background-color: #243242;
+    height: 60px;
+    width: 190px;
+    border-radius: 100px;
     z-index: 1;
     border: none;
     bottom: 85px;
