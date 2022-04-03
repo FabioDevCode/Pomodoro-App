@@ -57,9 +57,10 @@ let countCircle = setInterval(()=> {
     actual--;
 
     progressBar.style.background = `conic-gradient(
-        #ff6347 ${actual / degRadiant}deg,
-        #212c3b ${actual / degRadiant}deg
+        #e74c3c ${actual / degRadiant}deg,
+        #222F3E ${actual / degRadiant}deg
     )`;
+
     if(actual == min) {
         clearInterval(actual)
     }
