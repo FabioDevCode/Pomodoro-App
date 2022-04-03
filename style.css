@@ -15,7 +15,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    justify-content: center;
+    height: 100vh;
+    min-height: max-content;
+    max-height: 100vh;
     background-color: #222F3E;
     color: whitesmoke;
 }
@@ -33,7 +36,7 @@ h1 {
     justify-content: space-evenly;
     align-items: center;
     height: 60px;
-    width: 320px;
+    width: 470px;
     background-color: #1d2835;
     border-radius: 50px;
 }
@@ -45,7 +48,7 @@ h1 {
     color: var(--color-lgt);
     background-color: transparent;
     cursor: pointer;
-    width: 100px;
+    width: 150px;
     height: 50px;
     border: none;
     border-radius: 50px;
@@ -60,7 +63,7 @@ h1 {
     position: absolute;
     background-color: tomato;
     height: 50px;
-    width: 100px;
+    width: 150px;
     border-radius: 50px;
     z-index: 1;
     transition: all 300ms ease-in-out;
@@ -69,10 +72,10 @@ h1 {
     left: 5px;
 }
 .group-btn .anim2 {
-    left: 110px;
+    left: 160px;
 }
 .group-btn .anim3 {
-    left: 215px;
+    left: 315px;
 }
 
 .horloge {
@@ -166,7 +169,7 @@ h1 {
     align-items: center;
     background-color: #243242;
     height: 60px;
-    width: 190px;
+    width: 120px;
     border-radius: 100px;
     z-index: 1;
     border: none;
