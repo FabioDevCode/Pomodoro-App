@@ -11,6 +11,10 @@
     scrollbar-color: tomato #222F3E;
 }
 
+input, button {
+    border: none;
+}
+
 *::-webkit-scrollbar {
     width: 8px;
     height: 10px;
@@ -234,7 +238,92 @@ h2 {
     fill: whitesmoke;
 }
 
+.modale {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #273647;
+    width: 40%;
+    min-width: 320px;
+    height: 500px;
+    height: max-content;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-family: var(--font-fam);
+}
 
+.modale h3 {
+    padding-left: 25px;
+    font-size: 2.5em;
+    margin-bottom: -10px;
+}
+
+.modale form h4 {
+    font-weight: 500;
+    padding-left: 25px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.modale form label {
+    font-size: 2em;
+    font-weight: 500;
+    padding-left: 125px;
+    margin-top: 12px;
+    margin-bottom: -16px;
+}
+
+.modale form input {
+    height: 40px;
+    border-radius: 50px;
+    margin: 0 100px;
+    padding: 0 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.modale form input:focus {
+    border: 2px solid #3498db;
+}
+
+.modale form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modale form button {
+    cursor: pointer;
+    height: 45px;
+    margin: 50px 25px 5px 25px;
+    border-radius: 50px;
+    box-shadow: 0 0 3px rgba(29, 40, 53, .3);
+    background-color: #e74c3c;
+    color: white;
+    font-family: var(--font-fam);
+    font-size: 1.8em;
+    padding-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modale form button:active {
+    transform: scale(.95);
+}
+
+.close_modale {
+    z-index: 900;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .6);
+}
 
 
 
@@ -246,4 +335,9 @@ h2 {
         height: 260px;
     }
 
+}
+
+.none {
+    display: none;
+    visibility: hidden;
 }

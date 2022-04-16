@@ -22,20 +22,20 @@
 
     <div class="group-btn">
         <div class="back-btn anim1"></div>
-        <button class="btn1 active">Work Time</button>
-        <button class="btn2">Short Break</button>
-        <button class="btn3">Long Break</button>
+        <button class="btns btn1 active">Work Time</button>
+        <button class="btns btn2">Short Break</button>
+        <button class="btns btn3">Long Break</button>
     </div>
 
     <div class="horloge">
 
-        <h2>Work Time</h2>
+        <h2 class="horloge_title">Work Time</h2>
 
         <audio src="./assets/Bell.mp3"></audio>
 
         <div class="progress-bar">
             <div class="time">
-                <div class="mins">00</div>
+                <div class="mins">25</div>
                 <div class="point">
                     <div></div>
                     <div></div>
@@ -45,18 +45,36 @@
         </div>
 
         <button id="play_pause">
-            <svg xmlns="http://www.w3.org/2000/svg" 
+            <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512">
             <!-- Font Awesome Pro 5.15.4 by @fontawesome -
-                 https://fontawesome.com License - 
-                 https://fontawesome.com/license 
+                 https://fontawesome.com License -
+                 https://fontawesome.com/license
                  (Commercial License) -->
                 <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
             </svg>
         </button>
     </div>
 
+    <div class="modale none">
+    <h3>SETTINGS</h3>
+        <form>
+            <h4>Enter data in minutes</h4>
 
+            <label for="work">WORK</label>
+            <input id="work" name="work" type="number" min="1" max="99" value="25">
 
+            <label for="short">SHORT</label>
+            <input id="short" name="short" type="number" min="1" max="99" value="5">
+
+            <label for="long">LONG</label>
+            <input id="long" name="long" type="number" min="1" max="99" value="15">
+
+            <button class="setting_save">SAVE MY CHOICE</button>
+        </form>
+    </div>
+    <div class="close_modale none">
+
+    </div>
 </body>
 </html>
