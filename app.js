@@ -5,6 +5,13 @@ const modale = document.querySelector('.modale');
 const closeModale = document.querySelector('.close_modale');
 const allBtns = document.querySelectorAll('.btns');
 
+const btnBg = document.querySelector(".back-btn")
+const btn1 = document.querySelector(".btn1");
+const btn2 = document.querySelector(".btn2");
+const btn3 = document.querySelector(".btn3");
+const horlogeTitle = document.querySelector('.horloge_title');
+const mins = document.querySelector('.mins');
+
 setting.addEventListener('click', () => {
     modale.classList.remove('none');
     closeModale.classList.remove('none');
@@ -16,9 +23,9 @@ closeModale.addEventListener('click', () => {
 })
 
 // Default value
-let pomodoro = 25;
-let short = 5;
-let long = 15;
+let pomodoro = '25';
+let short = '05';
+let long = '15';
 
 // Récupération des velues des inputs
 const btnSetting = document.querySelector('.setting_save');
@@ -28,21 +35,39 @@ const longInput = document.querySelector('#long');
 
 btnSetting.addEventListener('click', (event) => {
     event.preventDefault();
-    pomodoro = pomoInput.value;
-    short = shortInput.value;
-    long = longInput.value;
+
+    pomodoro = pomoInput.value.length < 2 ? `0${pomoInput.value}`: pomoInput.value;
+    short = shortInput.value.length < 2 ? `0${shortInput.value}`: shortInput.value;
+    long = longInput.value.length < 2 ? `0${longInput.value}`: longInput.value;
+
+    // Mise à jour de l'horloge (timer) validation de la durer de le bouton réglage.
+    allBtns.forEach((btn) => {
+        if(btn.classList.length == 3) {
+            switch(btn.classList[1]) {
+                case 'btn1':
+                    btn1.click();
+                    break;
+                case 'btn2':
+                    btn2.click();
+                    break;
+                case 'btn3':
+                    btn3.click();
+                    break;
+            }
+        }
+    })
+
     modale.classList.add('none');
     closeModale.classList.add('none');
 })
 
-const btnBg = document.querySelector(".back-btn")
-const btn1 = document.querySelector(".btn1");
-const btn2 = document.querySelector(".btn2");
-const btn3 = document.querySelector(".btn3");
-const horlogeTitle = document.querySelector('.horloge_title');
-const mins = document.querySelector('.mins');
-
-let weStartfor;
+// Ordre du timer pomodoro
+const orderPomo = {
+    work: ['work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'],
+    short: ['short', 'work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'],
+    long: ['long', 'work', 'short', 'work', 'short', 'work', 'short', 'work', 'long']
+}
+let weStartfor = orderPomo.work;
 
 // Animation sur les 3 boutons du menu
 btn1.addEventListener('click', function() {
@@ -74,68 +99,30 @@ btn3.addEventListener('click', function() {
     btnBg.classList.remove("anim1");
     btnBg.classList.remove("anim2");
     btnBg.classList.add("anim3");
-    weStartfor = orderPomo.short;
+    weStartfor = orderPomo.long;
     horlogeTitle.innerHTML = 'Long Break';
     mins.innerHTML = `${long}`;
 })
 
-
-// Ordre du timer pomodoro
-const orderPomo = {
-    work: ['work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'],
-    short: ['short', 'work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'],
-    long: ['long', 'work', 'short', 'work', 'short', 'work', 'short', 'work', 'long']
-}
-
-
-// Changer la couleur du cercle en fonction du timer en cours work, short ou long
-let circleColor = '#e74c3c';
-function specActualPomodori(actualPomo) {
-    switch(actualPomo) {
-        case 'work':
-            circleColor = '#e74c3c';
-            break;
-        case 'short':
-            circleColor = '#2ecc71';
-            break;
-        case 'long':
-            circleColor = '#3498db';
-            break;
-    }
-}
-
 const playBtn = document.querySelector('#play_pause');
 playBtn.addEventListener('click', () => {
-    alert('start le timer !');
+    startTimer();
 })
 
-
-let min = 0;
 
 function convertTime(minutes) {
     let timeConverted = minutes * 60;
     return timeConverted
 };
 
+let decremenTable = weStartfor;
+let circleColor = '#e74c3c';
+let actual;
 
-let progressBar = document.querySelector(".progress-bar");
+function startTimer() {
+    alert(`Le feature n'est pas encore fonctionnelle`);
+}
 
-let actual = pomodoro;
-let degRadiant = (actual / 360);
-
-
-// let countCircle = setInterval(()=> {
-//     actual--;
-
-//     progressBar.style.background = `conic-gradient(
-//         #e74c3c ${actual / degRadiant}deg,
-//         #222F3E ${actual / degRadiant}deg
-//     )`;
-
-//     if(actual == min) {
-//         clearInterval(actual)
-//     }
-// }, 1000);
 
 
 
