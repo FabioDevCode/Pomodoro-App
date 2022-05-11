@@ -3,20 +3,21 @@ const body = document.querySelector('body');
 const setting = document.querySelector('.setting');
 const modale = document.querySelector('.modale');
 const closeModale = document.querySelector('.close_modale');
-const allBtns = document.querySelectorAll('.btns');
 
+const allBtns = document.querySelectorAll('.btns');
 const btnBg = document.querySelector(".back-btn")
 const btn1 = document.querySelector(".btn1");
 const btn2 = document.querySelector(".btn2");
 const btn3 = document.querySelector(".btn3");
+
 const horlogeTitle = document.querySelector('.horloge_title');
 const mins = document.querySelector('.mins');
+const secs = document.querySelector('.secs');
 
 setting.addEventListener('click', () => {
     modale.classList.remove('none');
     closeModale.classList.remove('none');
 })
-
 closeModale.addEventListener('click', () => {
     modale.classList.add('none');
     closeModale.classList.add('none');
@@ -35,7 +36,6 @@ const longInput = document.querySelector('#long');
 
 btnSetting.addEventListener('click', (event) => {
     event.preventDefault();
-
     pomodoro = pomoInput.value.length < 2 ? `0${pomoInput.value}`: pomoInput.value;
     short = shortInput.value.length < 2 ? `0${shortInput.value}`: shortInput.value;
     long = longInput.value.length < 2 ? `0${longInput.value}`: longInput.value;
@@ -56,7 +56,6 @@ btnSetting.addEventListener('click', (event) => {
             }
         }
     })
-
     modale.classList.add('none');
     closeModale.classList.add('none');
 })
@@ -104,12 +103,6 @@ btn3.addEventListener('click', function() {
     mins.innerHTML = `${long}`;
 })
 
-const playBtn = document.querySelector('#play_pause');
-playBtn.addEventListener('click', () => {
-    startTimer();
-})
-
-
 function convertTime(minutes) {
     let timeConverted = minutes * 60;
     return timeConverted
@@ -119,11 +112,30 @@ let decremenTable = weStartfor;
 let circleColor = '#e74c3c';
 let actual;
 
-function startTimer() {
-    alert(`Le feature n'est pas encore fonctionnelle`);
+
+const playBtn = document.querySelector('#play_pause');
+playBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+
+    
+
+    setInterval(updateNbTime(), 1000)
+})
+
+
+
+
+function updateNbTime() {
+    let initial = convertTime(pomodoro);
+
+    const minutes = Math.floor(initial / 60);
+    let seconds = initial % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    console.log(minutes, " : ", seconds);
+
+    initial--
+
 }
-
-
-
-
-
