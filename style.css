@@ -1,4 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'TekoLight';
+    src: url('./assets/fonts/teko-light.woff2') format('woff2'),
+         url('./assets/fonts/teko-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TekoBold';
+    src: url('./assets/fonts/teko-bold.woff2') format('woff2'),
+         url('./assets/fonts/teko-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TekoMed';
+    src: url('./assets/fonts/teko-medium.woff2') format('woff2'),
+         url('./assets/fonts/teko-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Teko';
+    src: url('./assets/fonts/teko-regular.woff2') format('woff2'),
+         url('./assets/fonts/teko-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TekoSemB';
+    src: url('./assets/fonts/teko-semibold.woff2') format('woff2'),
+         url('./assets/fonts/teko-semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 *, ::before, ::after {
     box-sizing: border-box;
@@ -38,7 +73,7 @@ input, button {
 }
 
 html {
-    --font-fam: 'Teko', sans-serif;
+    --font-fam: 'TekoSemB', sans-serif;
     --color-lgt: rgba(255, 255, 255, .6);
 }
 
@@ -53,6 +88,7 @@ body {
 }
 
 .titleBloc {
+    height: 90px;
     display: flex;
     align-items: center;
     margin: 25px 0;
@@ -325,7 +361,6 @@ h2 {
     right: 0;
     background-color: rgba(255, 255, 255, .6);
 }
-
 
 
 @media screen and (max-width: 365px) {
