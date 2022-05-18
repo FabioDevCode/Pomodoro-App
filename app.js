@@ -27,9 +27,9 @@ closeModale.addEventListener('click', () => {
 })
 
 // Default value
-let pomodoro = '25';
-let short = '05';
-let long = '15';
+let pomodoro = "25";
+let short = "5";
+let long = "15";
 
 // Récupération des velues des inputs
 const btnSetting = document.querySelector('.setting_save');
@@ -39,9 +39,15 @@ const longInput = document.querySelector('#long');
 
 btnSetting.addEventListener('click', (event) => {
     event.preventDefault();
-    pomodoro = pomoInput.value.length < 2 ? `0${pomoInput.value}`: pomoInput.value;
-    short = shortInput.value.length < 2 ? `0${shortInput.value}`: shortInput.value;
-    long = longInput.value.length < 2 ? `0${longInput.value}`: longInput.value;
+
+    pomodoro = pomoInput.value;
+    short = shortInput.value;
+    long = longInput.value;
+
+
+    pomodoro.length < 2 ? `0${pomoInput.value}`: pomoInput.value;
+    short.length < 2 ? `0${shortInput.value}`: shortInput.value;
+    long.length < 2 ? `0${longInput.value}`: longInput.value;
 
     // Mise à jour de l'horloge (timer) validation de la durer de le bouton réglage.
     allBtns.forEach((btn) => {
@@ -59,9 +65,13 @@ btnSetting.addEventListener('click', (event) => {
             }
         }
     })
+
     modale.classList.add('none');
     closeModale.classList.add('none');
 })
+
+
+
 
 // Animation sur les 3 boutons du menu
 btn1.addEventListener('click', function() {
@@ -95,31 +105,46 @@ btn3.addEventListener('click', function() {
     mins.innerHTML = `${long}`;
 })
 
-
-// Ordre du timer pomodoro
-const orderPomo = ['work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'];
-
-//let times value : pomodoro - short - long
-let circleColor = '#e74c3c';
-let actual;
-let timerPlaying;
-
-
 function convertTime(minutes) {
     let timeConverted = minutes * 60;
     return timeConverted
 };
 
-// Fonction global du timer
-function timer(orderPomo, work) {
-    let actualTime = parseInt(work) * 60;
+// Ordre du timer pomodoro
+const orderPomo = ['work', 'short', 'work', 'short', 'work', 'short', 'work', 'long'];
 
-    actualTime--
+let circleColor = '#e74c3c';
 
-    console.log(work)
-    // PLAY timer
-    console.log("PLAY PLAY PLAY with setInterval");
-};
+
+
+function timer(time, array){
+    timerPlaying = setInterval(function(){
+        // Décompte du temps
+        time--
+        console.log(time);
+
+        if(time == 0){
+            if(array.length > 0) {
+                clearInterval(timerPlaying)
+                let firstArray = array.shift();
+                switch(firstArray){
+                    case 'work':
+                        time = convertTime(pomodoro);
+                        break;
+                    case 'short':
+                        time = convertTime(short);
+                        break;
+                    case 'long':
+                        time = convertTime(long);
+                        break;
+                }
+                timer(time, array)
+            } else {
+                return;
+            }
+        }
+    }, 1000);
+}
 
 
 playBtn.addEventListener('click', () => {
@@ -127,14 +152,13 @@ playBtn.addEventListener('click', () => {
     btnStop.classList.toggle('none');
 
     if(playBtn.classList['value'] === 'play') {
-        timerPlaying = setInterval(timer, 1000)
+        let actual = convertTime(pomodoro);
+        timer(actual, orderPomo)
     }
     if(playBtn.classList['value'] === 'stop') {
         clearInterval(timerPlaying)
     }
 
-
     playBtn.classList.toggle('play');
     playBtn.classList.toggle('stop');
 })
-
