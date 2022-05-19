@@ -26,8 +26,9 @@
 
 ##
 
-### Cycle :
+<br>
 
+### Cycle :
 
 - 4 périodes de travail de 25 minutes (W)<br>
 séparé de,
