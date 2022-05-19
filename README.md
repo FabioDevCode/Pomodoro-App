@@ -1,11 +1,14 @@
 <h1 align="center">POMODORO APP</h1>
 
 <br>
-<div align="center" width="100%">
-  <img src="./assets/PomodoroApp.jpg">
+<div align="center">
+  <img height="450px" src="./assets/PomodoroApp.jpg">
 </div>
 
-Application de pomodoro avec gestion du temps.
+<br>
+
+<h3 align="center">Application de pomodoro avec gestion du temps</h3>
+
 
 <br>
 
@@ -23,17 +26,18 @@ Application de pomodoro avec gestion du temps.
 
 ##
 
-<br>
-
 ### Cycle :
 
-- 4 périodes de travail de 25 minutes (W)
+
+- 4 périodes de travail de 25 minutes (W)<br>
 séparé de,
-- 3 périodes de pause courte de 5 minutes (S)
+- 3 périodes de pause courte de 5 minutes (S)<br>
 et terminant par,
 - 1 période de pause longue de 15 minutes (L)
 
-Soit [ W - S - W - S - W - S - W - L ]
+
+Soit : [ W - S - W - S - W - S - W - L ]
+
 
 L'application émet un signal sonore au début de chaque période.
 
