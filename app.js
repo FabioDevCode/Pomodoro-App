@@ -139,7 +139,6 @@ function timer(time, array){
     let degRadiant = (time / 360);
     timerPlaying = setInterval(function(){
         time--
-        console.log(time);
 
         mins.innerHTML = Math.floor(time/60) > 9 ? Math.floor(time/60) : `0${Math.floor(time/60)}`;
         secs.innerHTML = time % 60 > 9 ? time % 60 : `0${time%60}`;
@@ -151,7 +150,6 @@ function timer(time, array){
 
         if(time == 0){
             array.shift();
-            console.log(array[0]);
             if(array.length > 0) {
                 clearInterval(timerPlaying)
                 progressBar.style.background = `transparent`;
@@ -226,6 +224,7 @@ playBtn.addEventListener('click', () => {
     if(playBtn.classList['value'] === 'stop') {
         clearInterval(timerPlaying)
         progressBar.style.background = `transparent`;
+        circleColor = '#e74c3c';
         mins.innerHTML = `${work}`;
         secs.innerHTML = '00';
     }
