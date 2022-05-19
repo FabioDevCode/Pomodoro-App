@@ -1,4 +1,4 @@
-<h1 align="center">POMODORO APP</h1>
+<h1 align="center">Pomodoro App</h1>
 
 <br>
 <div align="center">
