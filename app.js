@@ -153,7 +153,7 @@ function timer(time, array){
 
         progressBar.style.background = `conic-gradient(
             ${circleColor} ${time / degRadiant}deg,
-            #212c3b ${time / degRadiant}deg
+            transparent ${time / degRadiant}deg
         )`;
 
         if(time == 0){
