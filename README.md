@@ -7,11 +7,6 @@
 
 <br>
 
-<h3 align="center">Application de pomodoro avec gestion du temps</h3>
-
-
-<br>
-
 <table align="center">
   <tr>
     <td>
@@ -22,7 +17,6 @@
   </tr>
 </table>
 
-<br>
 
 ##
 
@@ -30,16 +24,15 @@
 
 - Émet un signal sonore au début de chaque période.
 - Affiche le timer dans l'onglet de la page.
-- La favicon de l'onglet change de couleur en fonction de la période.
-- Le bouton réglage permet choisir le temps en minutes de chaque période "Work", "Short" et "Long"
+- Change de couleur de la favicon en fonction de la période.
+- Permet choisir le temps en minutes de chaque période "Work", "Short" et "Long" via le bouton réglage à droite du titre.
 
+##
 
 ### Cycle :
 
-- 4 périodes de travail de 25 minutes (W)<br>
-séparé de,
-- 3 périodes de pause courte de 5 minutes (S)<br>
-et terminant par,
+- 4 périodes de travail de 25 minutes (W) séparé de,
+- 3 périodes de pause courte de 5 minutes (S) et terminant par,
 - 1 période de pause longue de 15 minutes (L)
 
 Soit : [ W - S - W - S - W - S - W - L ]
