@@ -26,7 +26,13 @@
 
 ##
 
-<br>
+### L'application : 
+
+- Émet un signal sonore au début de chaque période.
+- Affiche le timer dans l'onglet de la page.
+- La favicon de l'onglet change de couleur en fonction de la période.
+- Le bouton réglage permet choisir le temps en minutes de chaque période "Work", "Short" et "Long"
+
 
 ### Cycle :
 
@@ -36,10 +42,6 @@ séparé de,
 et terminant par,
 - 1 période de pause longue de 15 minutes (L)
 
-
 Soit : [ W - S - W - S - W - S - W - L ]
-
-
-L'application émet un signal sonore au début de chaque période.
 
 <br>
