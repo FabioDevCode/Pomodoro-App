@@ -17,6 +17,10 @@ const secs = document.querySelector('.secs');
 let progressBar = document.querySelector(".progress-bar");
 const sound = new Audio('./assets/Bell.mp3');
 
+let favicon = document.getElementById('favicon');
+const title = document.querySelector('title');
+title.innerText = 'Pomodoro App';
+
 
 setting.addEventListener('click', () => {
     modale.classList.remove('none');
@@ -140,8 +144,12 @@ function timer(time, array){
     timerPlaying = setInterval(function(){
         time--
 
-        mins.innerHTML = Math.floor(time/60) > 9 ? Math.floor(time/60) : `0${Math.floor(time/60)}`;
-        secs.innerHTML = time % 60 > 9 ? time % 60 : `0${time%60}`;
+        const minS = Math.floor(time/60) > 9 ? Math.floor(time/60) : `0${Math.floor(time/60)}`;
+        const secS = time % 60 > 9 ? time % 60 : `0${time%60}`;
+
+        mins.innerHTML = minS;
+        secs.innerHTML = secS;
+        title.innerHTML = `${minS} : ${secS} - Pomodoro App`;
 
         progressBar.style.background = `conic-gradient(
             ${circleColor} ${time / degRadiant}deg,
@@ -164,6 +172,7 @@ function timer(time, array){
                         btnBg.classList.remove("anim2");
                         btnBg.classList.remove("anim3");
                         horlogeTitle.innerHTML = 'Work Time';
+                        favicon.href = './assets/pomodori.png';
                         break;
                     case 'short':
                         time = convertTime(short);
@@ -175,6 +184,7 @@ function timer(time, array){
                         btnBg.classList.add("anim2");
                         btnBg.classList.remove("anim3");
                         horlogeTitle.innerHTML = 'Short Break';
+                        favicon.href = './assets/pomodorigreen.png';
                         break;
                     case 'long':
                         time = convertTime(long);
@@ -186,6 +196,7 @@ function timer(time, array){
                         btnBg.classList.remove("anim2");
                         btnBg.classList.add("anim3");
                         horlogeTitle.innerHTML = 'Long Break';
+                        favicon.href = './assets/pomodoriblue.png';
                         break;
                 }
                 timer(time, array)
@@ -224,7 +235,16 @@ playBtn.addEventListener('click', () => {
     if(playBtn.classList['value'] === 'stop') {
         clearInterval(timerPlaying)
         progressBar.style.background = `transparent`;
+        btn1.classList.add("active");
+        btn2.classList.remove("active");
+        btn3.classList.remove("active");
+        btnBg.classList.add("anim1");
+        btnBg.classList.remove("anim2");
+        btnBg.classList.remove("anim3");
+        horlogeTitle.innerHTML = 'Work Time';
         circleColor = '#e74c3c';
+        favicon.href = './assets/pomodori.png';
+        title.innerText = 'Pomodoro App';
         mins.innerHTML = `${work}`;
         secs.innerHTML = '00';
     }

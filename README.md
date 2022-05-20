@@ -2,7 +2,7 @@
 
 <br>
 <div align="center">
-  <img height="450px" src="./assets/PomodoroApp.jpg">
+  <img src="./assets/PomodoroApp.jpg">
 </div>
 
 <br>
