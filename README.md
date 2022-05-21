@@ -20,11 +20,12 @@
 
 ##
 
-### L'application : 
+### Fonctionnalités : 
 
 - Émet un signal sonore au début de chaque période.
 - Affiche le timer dans l'onglet de la page.
-- Change de couleur de la favicon en fonction de la période.
+- Change de couleur de la favicon en fonction de la période.<br> 
+  Work : <img height="20px" src="./assets/pomodori.png"> | Short : <img height="20px" src="./assets/pomodorigreen.png"> | Long : <img height="20px" src="./assets/pomodoriblue.png"> | Pomodoro terminé : <img height="20px" src="./assets/pomodoriGrey.png">
 - Permet choisir le temps en minutes de chaque période "Work", "Short" et "Long" via le bouton réglage à droite du titre.
 
 ##
