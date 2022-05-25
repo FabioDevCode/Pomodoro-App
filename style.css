@@ -362,7 +362,7 @@ h2 {
     background-color: rgba(255, 255, 255, .6);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
     .group-btn {
         height: 60px;
         width: 410px;
@@ -409,7 +409,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 410px) {
     .group-btn {
         height: 60px;
         width: 350px;
@@ -452,7 +452,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
     .group-btn {
         height: 50px;
         width: 290px;
