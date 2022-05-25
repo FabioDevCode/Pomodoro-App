@@ -1,4 +1,3 @@
-// gestion apparriion/disparition de la modale de réglage
 const body = document.querySelector('body');
 const setting = document.querySelector('.setting');
 const modale = document.querySelector('.modale');
@@ -38,6 +37,7 @@ closeModale.addEventListener('click', () => {
     closeModale.classList.add('none');
 })
 
+// Modification de des temps work, short et long
 if(localStorage.getItem('workSt', 'shortSt', 'longSt')) {
     work = localStorage.getItem('workSt');
     short = localStorage.getItem('shortSt');
@@ -70,7 +70,6 @@ btnSetting.addEventListener('click', (event) => {
     short.value > 9 ? shortInput.value : `0${shortInput.value}`;
     long.value > 9 ? longInput.value : `0${longInput.value}`;
 
-
     // Mise à jour de l'horloge (timer) validation de la durer de le bouton réglage.
     allBtns.forEach((btn) => {
         if(btn.classList.length == 3) {
@@ -91,7 +90,6 @@ btnSetting.addEventListener('click', (event) => {
     modale.classList.add('none');
     closeModale.classList.add('none');
 })
-
 
 // Animation sur les 3 boutons du menu
 btn1.addEventListener('click', function() {
