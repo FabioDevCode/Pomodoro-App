@@ -14,4 +14,6 @@ let URLS = [
   `${GHPATH}/assets/pomodoriblue.png`,
   `${GHPATH}/assets/pomodorigreen.png`,
   `${GHPATH}/assets/pomodorigrey.png`,
+  `${GHPATH}/assets/fonts/teko-semibold.woff`,
+  `${GHPATH}/assets/fonts/teko-semibold.woff2`,
 ]

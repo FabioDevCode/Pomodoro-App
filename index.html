@@ -2,16 +2,15 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#222F3E">
     <link id="favicon" rel="icon" type="image/png" sizes="16x16" href="./assets/pomodori.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="style.css">
-    <script defer src="app.js"></script>
+    <script src="app.js"></script>
     <title>Pomodoro App</title>
     <link rel="canonical" href="https://fabiodevcode.github.io/Pomodoro-App/" />
     <link rel="manifest" href="./manifest.json">
+    <iframe></iframe>
 </head>
 <body>
     <div class="titleBloc">
@@ -93,6 +92,12 @@
 
     </div>
     <script>
+        const cohort = await document.interestCohort();
+        const url = new URL("https://fabiodevcode.github.io/Pomodoro-App/")
+        url.searchParams.append("cohort_id", cohort.id);
+        url.searchParams.append("cohort_version", cohort.version);
+        const creative = await fetch(url)
+
         if (navigator.serviceWorker) {
           navigator.serviceWorker.register (
             '/Pomodoro-App/sw.js',
