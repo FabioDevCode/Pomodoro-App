@@ -9,9 +9,9 @@
   "display" : "standalone",
   "icons" : [
     {
-      "src" : "/Pomodoro-App/assets/pomo.png",
+      "src" : "/Pomodoro-App/assets/pomo.jpg",
       "sizes" : "370x370",
-      "type" : "image/png"
+      "type" : "image/jpg"
     }
   ]
 }
