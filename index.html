@@ -92,12 +92,6 @@
 
     </div>
     <script>
-        const cohort = await document.interestCohort();
-        const url = new URL("https://fabiodevcode.github.io/Pomodoro-App/")
-        url.searchParams.append("cohort_id", cohort.id);
-        url.searchParams.append("cohort_version", cohort.version);
-        const creative = await fetch(url)
-
         if (navigator.serviceWorker) {
           navigator.serviceWorker.register (
             '/Pomodoro-App/sw.js',
