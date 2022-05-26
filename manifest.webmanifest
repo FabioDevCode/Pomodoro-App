@@ -1,0 +1,17 @@
+{
+  "name" : "Pomodoro App",
+  "short_name" : "Pomodoro",
+  "description": "PWA - Pomodoro App by FabioDevCode",
+  "scope": "/Pomodoro-App/",
+  "start_url": "/Pomodoro-App/",
+  "theme_color" : "#222F3E",
+  "background_color" : "#222F3E",
+  "display" : "standalone",
+  "icons" : [
+    {
+      "src" : "/Pomodoro-App/assets/pomo.png",
+      "sizes" : "370x370",
+      "type" : "image/png"
+    }
+  ]
+}

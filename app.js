@@ -21,6 +21,7 @@ const btnSetting = document.querySelector('.setting_save');
 const pomoInput = document.querySelector('#work');
 const shortInput = document.querySelector('#short');
 const longInput = document.querySelector('#long');
+const blockdisplay = document.querySelector('#block_click');
 title.innerText = 'Pomodoro App';
 
 let work;
@@ -145,6 +146,7 @@ let circleColor = '#e74c3c';
 function timer(time, array){
     sound.play();
     setting.classList.add('none');
+    blockdisplay.classList.toggle('none');
 
     let degRadiant = (time / 360);
 
@@ -165,7 +167,7 @@ function timer(time, array){
 
         if(time == 0){
             array.shift();
-
+            blockdisplay.classList.toggle('none');
             if(array.length > 0) {
                 clearInterval(timerPlaying)
                 progressBar.style.background = `transparent`;
@@ -218,7 +220,7 @@ function timer(time, array){
                 btnBg.classList.add("anim1");
                 btnBg.classList.remove("anim2");
                 btnBg.classList.remove("anim3");
-                favicon.href = './assets/pomodoriGrey.png';
+                favicon.href = './assets/pomodorigrey.png';
                 title.innerText = 'Finish - Pomodoro App';
                 mins.innerHTML = `${work}`;
                 secs.innerHTML = '00';
@@ -229,6 +231,7 @@ function timer(time, array){
                 playBtn.classList.toggle('play');
                 playBtn.classList.toggle('stop');
                 setting.classList.remove('none');
+                blockdisplay.classList.toggle('none');
                 return;
             }
         }
@@ -267,6 +270,7 @@ playBtn.addEventListener('click', () => {
         mins.innerHTML = `${work}`;
         secs.innerHTML = '00';
         setting.classList.remove('none');
+        blockdisplay.classList.toggle('none');
     };
 
     playBtn.classList.toggle('play');
