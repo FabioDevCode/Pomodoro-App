@@ -39,4 +39,3 @@
 Soit : [ W - S - W - S - W - S - W - L ]
 
 <br>
-<br>
