@@ -27,17 +27,17 @@ self.addEventListener('install', function (e) {
     caches.open(CACHE_NAME).then(function (cache) {
       console.log('installing cache : ' + CACHE_NAME)
       return cache.addAll([
-        `${GHPATH}/`,
-        `${GHPATH}/index.html`,
-        `${GHPATH}/style.css`,
-        `${GHPATH}/app.js`,
-        `${GHPATH}/assets/Bell.mp3`,
-        `${GHPATH}/assets/pomodori.png`,
-        `${GHPATH}/assets/pomodoriblue.png`,
-        `${GHPATH}/assets/pomodorigreen.png`,
-        `${GHPATH}/assets/pomodorigrey.png`,
-        `${GHPATH}/assets/fonts/teko-semibold.woff`,
-        `${GHPATH}/assets/fonts/teko-semibold.woff2`,
+        `/`,
+        `/index.html`,
+        `/style.css`,
+        `/app.js`,
+        `/assets/Bell.mp3`,
+        `/assets/pomodori.png`,
+        `/assets/pomodoriblue.png`,
+        `/assets/pomodorigreen.png`,
+        `/assets/pomodorigrey.png`,
+        `/assets/fonts/teko-semibold.woff`,
+        `/assets/fonts/teko-semibold.woff2`,
       ])
     })
   )
