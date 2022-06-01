@@ -4,6 +4,8 @@ const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 self.addEventListener('fetch', function(event) {
+  if (!(event.request.url.indexOf('http') === 0)) return;
+
   event.respondWith(caches.open('cache').then(function(cache) {
     return cache.match(event.request).then(function(response) {
     console.log("cache request: " + event.request.url);
@@ -30,13 +32,12 @@ self.addEventListener('fetch', function(event) {
                 `/assets/pomodorigrey.png`,
                 `/assets/fonts/teko-semibold.woff`,
                 `/assets/fonts/teko-semibold.woff2`,
-                `chrome-extension://*`
               ]);
             })
             );
             });
           return response || fetchPromise;
-    });
+    }).catch(() => caches.match('/fallback'));
     }));
   });
 
