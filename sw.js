@@ -1,20 +1,7 @@
-var GHPATH = '/Pomodoro-App';
-var APP_PREFIX = 'PomoApp_';
-var VERSION = 'version_01';
-var CACHE_NAME = APP_PREFIX + VERSION
-var URLS = [
-  `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/style.css`,
-  `${GHPATH}/app.js`,
-  `${GHPATH}/assets/Bell.mp3`,
-  `${GHPATH}/assets/pomodori.png`,
-  `${GHPATH}/assets/pomodoriblue.png`,
-  `${GHPATH}/assets/pomodorigreen.png`,
-  `${GHPATH}/assets/pomodorigrey.png`,
-  `${GHPATH}/assets/fonts/teko-semibold.woff`,
-  `${GHPATH}/assets/fonts/teko-semibold.woff2`,
-]
+const GHPATH = '/Pomodoro-App';
+const APP_PREFIX = 'PomoApp_';
+const VERSION = 'version_01';
+const CACHE_NAME = APP_PREFIX + VERSION
 
 // Respond with cached resources
 self.addEventListener('fetch', function (e) {
@@ -39,7 +26,19 @@ self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       console.log('installing cache : ' + CACHE_NAME)
-      return cache.addAll(URLS)
+      return cache.addAll([
+        `${GHPATH}/`,
+        `${GHPATH}/index.html`,
+        `${GHPATH}/style.css`,
+        `${GHPATH}/app.js`,
+        `${GHPATH}/assets/Bell.mp3`,
+        `${GHPATH}/assets/pomodori.png`,
+        `${GHPATH}/assets/pomodoriblue.png`,
+        `${GHPATH}/assets/pomodorigreen.png`,
+        `${GHPATH}/assets/pomodorigrey.png`,
+        `${GHPATH}/assets/fonts/teko-semibold.woff`,
+        `${GHPATH}/assets/fonts/teko-semibold.woff2`,
+      ])
     })
   )
 })
