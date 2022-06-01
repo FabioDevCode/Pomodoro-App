@@ -1,6 +1,6 @@
 {
   "name" : "Pomodoro App",
-  "short_name" : "Pomodoro",
+  "short_name" : "PomoApp",
   "description": "PWA - Pomodoro App by FabioDevCode",
   "scope": "/Pomodoro-App/",
   "start_url": "/Pomodoro-App/",
@@ -10,8 +10,8 @@
   "icons" : [
     {
       "src" : "/Pomodoro-App/assets/pomo.jpg",
-      "sizes" : "370x370",
-      "type" : "image/jpg"
+      "type" : "image/jpg",
+      "sizes" : "370x370"
     }
   ]
 }
