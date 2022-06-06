@@ -1,24 +1,9 @@
-<h1 align="center">Pomodoro App</h1>
-
-<br>
 <div align="center">
   <img src="./assets/PomodoroApp.jpg">
 </div>
 
-<br>
-
-<table align="center">
-  <tr>
-    <td>
-      <a href="https://fabiodevcode.github.io/Pomodoro-App/">
-        <b>COMMENCER ICI</b>
-      </a>
-    </td>
-  </tr>
-</table>
-
-
 ##
+
 
 ### Fonctionnalités : 
 
@@ -29,6 +14,7 @@
 - Permet choisir le temps en minutes de chaque période "Work", "Short" et "Long" via le bouton réglage à droite du titre.
 
 ##
+
 
 ### Cycle :
 
