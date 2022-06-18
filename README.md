@@ -26,6 +26,8 @@ Soit : [ W - S - W - S - W - S - W - L ]
 
 ##
 
-<br>
+
 
 <img align="right" src="https://badgen.net/badge/Made with ❤️ by/Fabio R. Lopes/E84C3D?icon=" />
+
+<br>
